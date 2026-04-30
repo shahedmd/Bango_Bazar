@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import UiFeedback from "./ui_feedback";
 import type { Product } from "./data/product";
@@ -229,14 +230,14 @@ export default function ProductCard({ product }: ProductCardProps) {
                   <span>Add to cart</span>
                 </button>
 
-                <button
-                  type="button"
+                <Link
+                  href={`/Product_details/${product.id}`}
                   className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-stone-200 text-stone-700 transition hover:border-stone-300 hover:bg-stone-50 hover:text-stone-950 focus:outline-none focus:ring-4 focus:ring-stone-100"
                   aria-label={`View details for ${product.name}`}
                   title="View details"
                 >
                   <ArrowIcon />
-                </button>
+                </Link>
               </div>
             </div>
           </div>
